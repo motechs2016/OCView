@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+"http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">	
+<validators>
+	<field name="adminName">
+		<field-validator type="requiredstring" short-circuit="true">
+			<message>姓名不能为空</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="regexExpression"><![CDATA[(.{2,20})]]></param>
+			<message>姓名的长度必须在2到20之间</message>
+		</field-validator>
+	</field>
+	<field name="adminEmail">
+		<field-validator type="email">
+			<message>请输入正确的邮箱</message>
+		</field-validator>
+	</field>
+	<field name="adminPhone">
+		<field-validator type="regex">
+			<param name="regexExpression"><![CDATA[(\d{0,11})]]></param>
+			<message>请输入正确的电话</message>
+		</field-validator>
+	</field>
+	<field name="adminInfo">
+		<field-validator type="stringlength">
+			<param name="minLength">0</param>
+			<param name="maxLength">255</param>
+			<message>备注信息不超过255个字符</message>
+		</field-validator>
+	</field>
+</validators>

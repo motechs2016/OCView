@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	
+    <!-- 配置为开发模式  -->
+    <constant name="struts.devMode" value="true" />
+	<!-- 把主题配置为simple--> 
+	<constant name="struts.ui.theme" value="simple"/>
+	<!-- 激活重新载入XML配置文件的功能 -->
+	<constant name="struts.configuration.xml.reload" value="true"/>
+    <!-- 后缀 -->
+    <constant name="struts.action.extension" value=",action"/>
+    <!-- 最大文件上传大小 -->
+    <constant name="struts.multipart.maxSize" value="1000000000"/>
+    
+    <!-- 后台管理的xml -->
+	<include file="struts-backend.xml"/>
+	
+	<!-- 前台页面的xml -->
+	<include file="struts-ocview.xml"/>
+	
+</struts>

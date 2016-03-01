@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	
+	<!-- OC View -->
+    <package name="ocview" namespace="/" extends="struts-default,json-default">
+    
+    	<!-- 定义全局视图  -->
+    	<global-results>
+    		<!-- 非法操作就返回首页 -->
+    		<result name="error" type="redirect">index</result>
+    	</global-results>
+    
+    	<!-- 首页  -->
+    	<action name="index" class="org.blue.ocview.index.action.IndexPageAction">
+    		<result>/index.jsp</result>
+    	</action>
+    	
+    	<!-- 登陆 -->
+    	<action name="user_login" class="org.blue.ocview.index.action.UserLoginAction">
+    		<result type="stream">
+    			<param name="contentType">text/html</param>
+    			<param name="inputName">result</param>
+    		</result>
+    	</action>
+    	
+    	<!-- 注册 -->
+    	<action name="user_regist" class="org.blue.ocview.index.action.UserRegistAction">
+    		<result type="stream">
+    			<param name="contentType">text/html</param>
+    			<param name="inputName">result</param>
+    		</result>
+    	</action>
+    	
+    	<!-- 意见提交  -->
+    	<action name="opinion_submit" class="org.blue.ocview.index.action.OpinionAction">
+    		<result type="stream">
+    			<param name="contentType">text/html</param>
+    			<param name="inputName">result</param>
+    		</result>
+    	</action>
+    	
+    	<!-- 搜索页面  -->
+    	<action name="search" class="org.blue.ocview.index.action.SearchAction">
+    		<result>/search.jsp</result>
+    	</action>
+    	
+    	<!-- 系列页面 -->
+    	<action name="series" class="org.blue.ocview.series.action.SeriesPageAction">
+    		<result>/series.jsp</result>
+    	</action>
+    	
+    	<!-- 系列评论 -->
+    	<action name="series_comment" class="org.blue.ocview.series.action.CommentAction">
+    		<result type="stream">
+    			<param name="contentType">text/html</param>
+    			<param name="inputName">result</param>
+    		</result>
+    	</action>
+    	
+    	<!-- 系列回复 -->
+    	<action name="series_reply" class="org.blue.ocview.series.action.ReplyAction">
+    		<result type="stream">
+    			<param name="contentType">text/html</param>
+    			<param name="inputName">result</param>
+    		</result>
+    	</action>
+    	
+    	<!-- 显示评论回复  -->
+    	<action name="show_comment_reply" class="org.blue.ocview.series.action.ShowCommentReplyAction">
+    		<result type="json">
+    			<param name="noCache">true</param>
+    			<param name="contentType">text/html</param>
+    		</result>
+    	</action>
+    	
+    	<!-- 视频页面 -->
+    	<action name="media" class="org.blue.ocview.media.action.MediaPageAction">
+    		<result>/media.jsp</result>
+    	</action>
+    	
+    	<!-- 视频投票 -->
+    	<action name="media_vote" class="org.blue.ocview.media.action.VoteAction">
+    		<result type="stream">
+    			<param name="contentType">text/html</param>
+    			<param name="inputName">result</param>
+    		</result>
+    	</action>
+    	
+    	<!-- 关于页面  -->
+    	<action name="about">
+    		<result>/about.jsp</result>
+    	</action>
+    	
+    	<!-- 联系页面  -->
+    	<action name="contact">
+    		<result>/contact.jsp</result>
+    	</action>
+    	
+    	<!-- 意见页面  -->
+    	<action name="opinion">
+    		<result>/opinion.jsp</result>
+    	</action>
+    	
+    	<!-- 主题页面 -->
+    	<action name="*" class="org.blue.ocview.topic.action.TopicPageAction">
+    		<result>/topic.jsp</result>
+    	</action>
+    	
+    </package>
+    
+</struts>

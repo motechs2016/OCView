@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+"http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">	
+<validators>
+	<field name="navicationName">
+		<field-validator type="requiredstring" short-circuit="true">
+			<message>导航名不能为空</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">0</param>
+			<param name="maxLength">25</param>
+			<message>导航名不超过25个字符</message>
+		</field-validator>
+	</field>
+	<field name="navicationUrl">
+		<field-validator type="requiredstring" short-circuit="true">
+			<message>导航链接不能为空</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">0</param>
+			<param name="maxLength">255</param>
+			<message>导航链接不超过255个字符</message>
+		</field-validator>
+	</field>
+	<field name="navicationDescription">
+		<field-validator type="stringlength">
+			<param name="minLength">0</param>
+			<param name="maxLength">255</param>
+			<message>导航说明不超过255个字符</message>
+		</field-validator>
+	</field>
+	<field name="navicationTarget">
+		<field-validator type="regex">
+			<param name="regexExpression"><![CDATA[(_bank)?(_parent)?(_top)?(_self)?]]></param>
+			<message>不允许其他非法值</message>
+		</field-validator>
+	</field>
+</validators>

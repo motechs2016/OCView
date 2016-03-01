@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	
+	<!-- 后台管理系统  -->
+    <package name="backend" namespace="/backend" extends="struts-default">
+    	
+    	<!-- 权限拦截器  -->
+    	<interceptors>
+    		<interceptor name="checkPrivilegeInterceptor" class="org.blue.backend.permission.interceptor.CheckPrivilegeInterceptor"/>
+    		<!-- 将权限定义到默认拦截栈中，只需要继承该default包就可以使用权限 -->
+    		<interceptor-stack name="defaultStack">
+    			<interceptor-ref name="checkPrivilegeInterceptor"/>
+    			<interceptor-ref name="defaultStack"/>
+    		</interceptor-stack>
+    	</interceptors>
+    	
+    	<!-- 登陆、权限错误、校验结果页面 -->
+    	<global-results>
+    		<result name="loginUI">/WEB-INF/jsp/adminAction/loginUI.jsp</result>
+    		<result name="noPrivilegeError">/noPrivilegeError.jsp</result>
+    		<result name="input">/operationError.jsp</result>
+    	</global-results>
+    	
+    	
+    	
+    	<!-- 首页  -->
+    	<action name="home_*" class="org.blue.backend.permission.action.HomeAction" method="{1}">
+    		<result name="{1}">/WEB-INF/jsp/index/{1}.jsp</result>
+    	</action>
+    	
+    	<!-- 角色管理 -->
+    	<action name="role_*" class="org.blue.backend.permission.action.RoleAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/roleAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/roleAction/saveUI.jsp</result>
+			<!-- 权限分配  -->
+			<result name="setPrivilegeUI">/WEB-INF/jsp/roleAction/setPrivilegeUI.jsp</result>
+			<result name="toList" type="redirectAction">role_list</result>
+		</action>
+    	
+    	<!-- 管理员管理 -->
+  		<action name="admin_*" class="org.blue.backend.permission.action.AdminAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/adminAction/list.jsp</result>
+			<result name="details">/WEB-INF/jsp/adminAction/details.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/adminAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">admin_list</result>
+			<!-- 注销  -->
+			<result name="logout">/WEB-INF/jsp/adminAction/logout.jsp</result>
+			<!-- 修改密码 -->
+			<result name="changePasswordUI">/WEB-INF/jsp/adminAction/changePasswordUI.jsp</result>
+			<result name="toIndex" type="redirectAction">home_index</result>
+		</action>
+    	
+    	<!-- 导航管理 -->
+		<action name="navication_*" class="org.blue.backend.navication.action.NavicationAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/navicationAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/navicationAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">navication_list?parentId=${parentId}</result>
+		</action>
+		
+    	<!-- 用户管理 -->
+		<action name="user_*" class="org.blue.backend.user.action.UserAction" method="{1}">
+			<result name="list">/WEB-INF/jsp/userAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/userAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">user_list</result>
+		</action>
+    	
+    	<!-- 视频管理 -->
+    	<action name="media_*" class="org.blue.backend.media.action.MediaAction" method="{1}">
+    		<!-- 转码格式 -->
+    		<param name="transcodeType">flv</param>
+    		<!-- 关键帧图片格式  -->
+    		<param name="pictureType">jpg</param>
+    		<!-- 文件保存路径 -->
+    		<param name="savePath">/videos/temp</param>
+    		<!-- 允许上传类型 -->
+    		<param name="allowTypes">video/avi,video/x-ms-asf,video/quicktime,video/mp4,video/3gpp,video/x-ms-wmv,video/mpeg</param>
+    		<!-- ffmpeg路径 -->
+    		<param name="ffmpegPath">/tools/ffmpeg.exe</param>
+    		<!-- 默认图片路径 -->
+    		<param name="defaultPicturePath">/videos/default/error.jpg</param>
+    		
+			<result name="list">/WEB-INF/jsp/mediaAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/mediaAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">media_list</result>
+			<result name="search">/WEB-INF/jsp/mediaAction/list.jsp</result>
+		</action>
+		
+		<!-- 讲师管理 -->
+		<action name="teacher_*" class="org.blue.backend.media.action.TeacherAction" method="{1}">
+			<!-- 文件保存路径 -->
+			<param name="savePath">videos/teacher</param>
+			<!-- 允许上传类型  -->
+			<param name="allowTypes">image/png,image/jpeg,image/gif,image/bmp</param>
+			<result name="list">/WEB-INF/jsp/teacherAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/teacherAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">teacher_list</result>
+		</action>
+		
+		<!-- 系列管理 -->
+		<action name="series_*" class="org.blue.backend.media.action.SeriesAction" method="{1}">
+			<!-- 文件保存路径 -->
+			<param name="savePath">videos/series</param>
+			<!-- 允许上传类型  -->
+			<param name="allowTypes">image/png,image/jpeg,image/gif</param>
+			<result name="list">/WEB-INF/jsp/seriesAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/seriesAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">series_list</result>
+		</action>
+		
+		<!-- 推荐管理 -->
+		<action name="recommend_*" class="org.blue.backend.media.action.RecommendAction" method="{1}">
+			<!-- 文件保存路径 -->
+			<param name="savePath">videos/recommend</param>
+			<!-- 允许上传类型  -->
+			<param name="allowTypes">image/png,image/jpeg,image/gif,image/bmp</param>
+			<result name="list">/WEB-INF/jsp/recommendAction/list.jsp</result>
+			<result name="saveUI">/WEB-INF/jsp/recommendAction/saveUI.jsp</result>
+			<result name="toList" type="redirectAction">recommend_list</result>
+		</action>
+		
+    </package>
+	
+</struts>

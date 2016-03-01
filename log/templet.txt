@@ -1,0 +1,63 @@
+/**列表*/
+public String list() throws Exception{
+	return "list";
+}
+/**删除*/
+public String delete() throws Exception{
+	return "toList";
+}
+/**添加页面*/
+public String addUI() throws Exception{
+	return "saveUI";
+}
+/**添加*/
+public String add() throws Exception{
+	return "toList";
+}
+/**修改页面*/
+public String editUI() throws Exception{
+	return "saveUI";
+}
+/**修改*/
+public String edit() throws Exception{
+	return "toList";
+}
+
+==================
+/**
+ * 获取分页信息
+ * @param pageNum
+ * @param pageSize
+ * @return
+ * @throws Exception
+ */
+PageBean getPageBean(int pageNum, int pageSize) throws Exception;
+
+/**
+ * 删除
+ * @param teacherIds
+ * @throws Exception
+ */
+void delete(int[] ids) throws Exception;
+
+/**
+ * 保存
+ * @param model
+ * @throws Exception
+ */
+void save(XXX model) throws Exception;
+
+/**
+ * 根据Id查找
+ * @param teacherId
+ * @return
+ * @throws Exception
+ */
+XXX getById(int id) throws Exception;
+
+/**
+ * 更新
+ * @param model
+ * @throws Exception
+ */
+void update(XXX model) throws Exception;

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+"http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">	
+<validators>
+	<field name="roleName">
+		<field-validator type="requiredstring" short-circuit="true">
+			<message>角色名不能为空</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">2</param>
+			<param name="maxLength">25</param>
+			<message>角色名长度在2到25之间</message>
+		</field-validator>
+	</field>
+	<field name="roleDescription">
+		<field-validator type="stringlength">
+			<param name="maxLength">255</param>
+			<message>角色说明最多不超过255字</message>
+		</field-validator>
+	</field>
+</validators>
