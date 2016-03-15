@@ -74,16 +74,21 @@
 				<div class="course1">
 					<div class="video1">
 						<div id="video">
-							<div id="a1" style="width:860px;height:538px;"> <!-- 此处JS添加播放器 --> </div>
+							<div id="a1" style="position:absolute;width:860px;height:538px;z-index:2;"> <!-- 此处JS添加播放器 --> </div>
 						</div>
 						<script type="text/javascript" src="ckplayer/offlights.js"></script>
 						<script type="text/javascript" src="ckplayer/ckplayer.js" charset="utf-8"></script>
+						<!-- CKplayer -->
 						<script type="text/javascript">
 							var flashvars={
 								f:'${pageContext.request.contextPath}${media.mediaPath}',
+								c:0,//使用.js配置，1为使用.xml配置。默认.xml配置
+								my_url:'${pageContext.request.requestURL}',
+								p:2//点击播放才加载
 							};
 							var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always'};
 							CKobject.embedSWF('ckplayer/ckplayer.swf','a1','ckplayer_a1','100%','100%',flashvars,params);
+							
 							//开关灯
 							var box = new LightBox();
 							function closelights(){//关灯
@@ -92,6 +97,8 @@
 							function openlights(){//开灯
 								box.Close();
 							}
+							//为什么全屏黑： 因为以前我弹出登录的时候 老是被视频挡住，我应该调低了显示层
+							//offlights z-index = 50
 						</script>
 					</div>
 				</div><!--end of course-->

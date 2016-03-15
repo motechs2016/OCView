@@ -21,6 +21,7 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T>{
 	public BaseAction(){
 		//通过反射获得model的真实实例
 		try {
+			//pt.toString = org.blue.backend.util.BaseAction<org.blue.backend.permission.domain.Admin>
 			ParameterizedType pt = (ParameterizedType)this.getClass().getGenericSuperclass();
 			Class<T> clazz = (Class<T>)pt.getActualTypeArguments()[0];
 			this.model = clazz.newInstance();

@@ -373,7 +373,7 @@ ry.app={};
 				var oFabiao=document.getElementById('fabiao');
 			if(oLoginPage!=null){
 				oLoginPage.onclick=function(){
-					$("#video").hide();
+					//$("#video").hide();
 				   oLogin.style.display="block";
 				    oTurepsw.style.display="none";
 			        oPswTrue.style.display='none';

@@ -73,7 +73,7 @@ OverLay.prototype = {
             Lay: null,
             Color: "#000",
             Opacity: 100,
-            zIndex: 50
+            zIndex: 1
         };
         this.Extend(this.options, options || {})
     },
