@@ -6,6 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>重邮公开课</title>
 	<link href="css/mystyle.css" rel="stylesheet" type="text/css" />
+	<link href="css/update.css" rel="stylesheet" type="text/css" />
 	<script src="js/myjs.js"></script>
 	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 	<script type="text/javascript" src="js/login.js"></script>
@@ -44,9 +45,14 @@
 		   <span id="loginPage"><a href="#">登录</a></span>
 		   </s:if>
 		   <s:else>
-		   <span id="userNickname"><a href="#">${user.userNickname}</a></span>
+		   <!-- userNickname 这里修改完 记得修改login.js -->
+		   <span id="user_homepage"><a href="#">${user.userNickname}</a></span>
+		   <span class="separation">|</span>
+		   <span id="user_setting"><a href="#">设置</a></span>
+		   <span class="separation">|</span>
+		   <span id="user_exit"><a href="user_exit">退出</a></span>
 		   </s:else>
-		   <span>|</span>
+		   <span class="separation">|</span>
 		   <span class="span"><a href="about">关于</a></span>
 		</div><!--end of top-->
 		<div id="header">

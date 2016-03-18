@@ -286,7 +286,8 @@ ry.app={};
 			var oZhuce=document.getElementById('zhuce');
 			var oDenglu=document.getElementById('denglu');
 			var oSignInwrapper=document.getElementById('signInwrapper');
-			 oLoginPage.onclick=function(){
+			 if(oLoginPage){
+			oLoginPage.onclick=function(){
 				   oLogin.style.display="block";
 				    oTurepsw.style.display="none";
 			        oPswTrue.style.display='none';
@@ -300,7 +301,7 @@ ry.app={};
 				   oWrapper.className="wrapper";
 				   oWrapper.style.height=oHeight+'px';
 				 }
-			
+			 }
 			}
 			ry.app.button=function(){
 				var oLoginPage=document.getElementById('loginPage');

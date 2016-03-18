@@ -1,0 +1,12 @@
+/**
+by ldc4
+*/
+
+/*index“≥√Ê*/
+#top{
+	cursor:default;
+}
+#top span a{
+	cursor:auto;
+	display: inline-block;
+}

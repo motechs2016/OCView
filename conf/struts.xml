@@ -5,20 +5,27 @@
 
 <struts>
 	
+	<!-- 测试部分 ：发布的时候记得换成相反的 -->
     <!-- 配置为开发模式  -->
     <constant name="struts.devMode" value="true" />
+    <!-- 激活重新载入XML配置文件的功能 -->
+	<constant name="struts.configuration.xml.reload" value="true"/>
+	<!-- 设置浏览器是否缓存静态内容 -->
+	<constant name="struts.serve.static.browserCache" value="false"/>
+	
+	
 	<!-- 把主题配置为simple--> 
 	<constant name="struts.ui.theme" value="simple"/>
-	<!-- 激活重新载入XML配置文件的功能 -->
-	<constant name="struts.configuration.xml.reload" value="true"/>
     <!-- 后缀 -->
     <constant name="struts.action.extension" value=",action"/>
     <!-- 最大文件上传大小 -->
     <constant name="struts.multipart.maxSize" value="1000000000"/>
+    <!-- 设置request/response编码  -->
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    
     
     <!-- 后台管理的xml -->
 	<include file="struts-backend.xml"/>
-	
 	<!-- 前台页面的xml -->
 	<include file="struts-ocview.xml"/>
 	

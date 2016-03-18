@@ -5,7 +5,6 @@
 
 <struts>
 
-	<constant name="struts.i18n.encoding" value="UTF-8"/>
 	
 	<!-- OC View -->
     <package name="ocview" namespace="/" extends="struts-default,json-default">
@@ -35,6 +34,11 @@
     			<param name="contentType">text/html</param>
     			<param name="inputName">result</param>
     		</result>
+    	</action>
+    	
+    	<!-- 退出  -->
+    	<action name="user_exit" class="org.blue.ocview.index.action.UserExitAction">
+    		<result type="redirect">index</result>
     	</action>
     	
     	<!-- 意见提交  -->

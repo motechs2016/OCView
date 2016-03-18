@@ -55,16 +55,16 @@ font-size:16px;margin-right:2px;}
 #img img{width:1349px;;height:426px;}
 #hot{width:290px;height:426px;position:absolute;top:0;left:976px;background:#000;opacity:0.7;
 filter:alpha(opacity=70);overflow:hidden;}
-#hot p{background:url(../images/hotbg.png) repeat-x;}
+#hot p{background:url(../images/ocview/hotbg.png) repeat-x;}
 #hot span a{color:#FFF;display:block;float:left;height:36px;line-height:36px;margin-left:18px;}
 .span_active{border-bottom:1px solid #09924B;}
 #hot ul{clear:both;list-style:none;font-size:14px;display:none;}
-#hot li{background:url(../images/li.png) no-repeat 20px 18px;width:260px;padding-left:30px;height:32px;
+#hot li{background:url(../images/ocview/li.png) no-repeat 20px 18px;width:260px;padding-left:30px;height:32px;
 line-height:32px;overflow:hidden;white-space: nowrap;text-overflow: ellipsis;}
 #hot a{color:#CCCCCC;display:block;height:32px;}
 #hot li:hover{background:#404040;}
-.col1wrapper{width:100%;background:url(../images/colbg.png) repeat-x;}
-.col1{overflow:hidden;background:url(../images/colbg.png) repeat-x;padding-left:86px;padding-top:46px;
+.col1wrapper{width:100%;background:url(../images/ocview/colbg.png) repeat-x;}
+.col1{overflow:hidden;background:url(../images/ocview/colbg.png) repeat-x;padding-left:86px;padding-top:46px;
 padding-bottom:80px;width:1263px;margin:0 auto;}
 .col1 h2{clear:both;font-size:24px;font-weight:normal;width:100%;}
 .col1 ul{list-style:none;margin-top:18px;float:left;}
@@ -116,7 +116,7 @@ padding-top:32px;}
 .pd26{padding-top:26px;}
 .pdl492{padding-left:492px;}
 
-.list{width:650px;background:url(../images/inforbg.png) repeat-x;margin-left:196px;margin-top:18px;float:left;
+.list{width:650px;background:url(../images/ocview/inforbg.png) repeat-x;margin-left:196px;margin-top:18px;float:left;
 border:1px solid #E8E8E8;float:left;background:#FFF;}
 .list1{width:840px;margin-left:84px;float:left;border:1px solid #E8E8E8;float:left;}
 
@@ -185,7 +185,7 @@ font-size:16px;padding-left:10px;font-family:"微软雅黑";color:#666666;}
 .login .button{background:url(../images/ocview/loginbg_hover.png) repeat-x;font-size:16px;color:#FFF;
 font-weight:bold;width:296px;}
 .login .button:hover{background:url(../images/ocview/loginbg.png) repeat-x;}
-.password{background:#FAFAFA url(../images/password.png) no-repeat 10px 10px;}
+.password{background:#FAFAFA url(../images/ocview/password.png) no-repeat 10px 10px;}
 .password1{background:#FAFAFA no-repeat 10px 10px;}
 .login p{margin-top:28px;margin-left:30px;font-size:14px;color:#999999;margin-bottom:40px;}
 .login a{color:#21A557;padding-left:2px;}
