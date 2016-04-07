@@ -85,14 +85,14 @@
 	    
 	    <div class="blank10"></div>
 	
-	    <img src="images/ts.gif" style="margin-bottom:-2px;" width="16" height="16" alt="tip" /> 提示：为了账号的安全，如果上面的登录情况有异常，建议马上修改密码。
+	    <img src="${pageContext.request.contextPath}/images/backend/ts.gif" style="margin-bottom:-2px;" width="16" height="16" alt="tip" /> 提示：为了账号的安全，如果上面的登录情况有异常，建议马上修改密码。
 	    
 	    <div class="blank10"></div>
 	    <div class="line"></div>
 	    <div class="blank10"></div>
 	
-	    <img src="images/icon-mail.gif" style="margin-bottom:-1px;" width="16" height="11" alt="mail" /> 联系：xxxx@blues.com<br/>
-	    <img src="images/icon-phone.gif" style="margin-bottom:-2px;" width="17" height="14" alt="phone" /> 网站：<a href="http://www.baidu.com" target="_blank">http://www.baidu.com</a>
+	    <img src="${pageContext.request.contextPath}/images/backend/icon-mail.gif" style="margin-bottom:-1px;" width="16" height="11" alt="mail" /> 联系：xxxx@blues.com<br/>
+	    <img src="${pageContext.request.contextPath}/images/backend/icon-phone.gif" style="margin-bottom:-2px;" width="17" height="14" alt="phone" /> 网站：<a href="http://www.baidu.com" target="_blank">http://www.baidu.com</a>
 	
 	</div>
 
