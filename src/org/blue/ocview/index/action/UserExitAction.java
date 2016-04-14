@@ -15,5 +15,4 @@ public class UserExitAction extends ActionSupport{
 		ActionContext.getContext().getSession().remove("user");
 		return "success";
 	}
-	
 }

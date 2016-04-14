@@ -24,7 +24,7 @@ var userLogin = function(){
 							+'<span class="separation">|</span>\n'
 							+'<span id="user_setting"><a href="#">设置</a></span>\n'
 							+'<span class="separation">|</span>\n'
-							+'<span id="user_exit"><a href="user_exit">退出</a></span>\n'
+							+'<span id="user_exit"><a href="#" onclick="userExit();">退出</a></span>\n'
 					);//“\n”让我好生费力的才把问题解决
 					
 					//刷新评论(在评论的页面才刷新！！)
@@ -81,4 +81,12 @@ var userRegist = function(){
 	);
 	
 }
+
+//退出后刷新页面
+userExit = function(){
+	$.get("user_exit");
+	window.location.reload();
+};
+
+
 /*designer:ldc4*/

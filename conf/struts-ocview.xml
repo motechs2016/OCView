@@ -38,7 +38,7 @@
     	
     	<!-- 退出  -->
     	<action name="user_exit" class="org.blue.ocview.index.action.UserExitAction">
-    		<result type="redirect">index</result>
+    		<result type="stream"></result>
     	</action>
     	
     	<!-- 意见提交  -->

@@ -49,18 +49,21 @@
 	<div id="wrapperContent">
 	
 		<div class="topwrapper">
-  			<div id="top">
-				<s:if test="#session.user==null">
-				<span id="loginPage"><a href="#">登录</a></span>
-				</s:if>
-				<s:else>
-				<span id="userNickname"><a href="#">${user.userNickname}</a></span>
-				</s:else>
-				<span>|</span>
-				<span><a href="index">首页</a></span>
-				<span>|</span>
-				<span class="span"><a href="about">关于</a></span>
-			</div>
+			<div id="top">
+			   <s:if test="#session.user==null">
+			   <span id="loginPage"><a href="#">登录</a></span>
+			   </s:if>
+			   <s:else>
+			   <!-- userNickname 这里修改完 记得修改login.js -->
+			   <span id="user_homepage"><a href="#">${user.userNickname}</a></span>
+			   <span class="separation">|</span>
+			   <span id="user_setting"><a href="#">设置</a></span>
+			   <span class="separation">|</span>
+			   <span id="user_exit"><a href="#" onclick="userExit();">退出</a></span>
+			   </s:else>
+			   <span class="separation">|</span>
+			   <span class="span"><a href="about">关于</a></span>
+			</div><!--end of top-->
 		</div>
 
 
