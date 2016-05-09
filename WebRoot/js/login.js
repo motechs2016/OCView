@@ -86,6 +86,7 @@ var userRegist = function(){
 userExit = function(){
 	$.get("user_exit");
 	window.location.reload();
+	//退出后本不应该刷新，但是用户退出，表示用户不想看了，这里感觉并没有任何语义矛盾
 };
 
 

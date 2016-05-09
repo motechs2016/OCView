@@ -61,6 +61,8 @@
 			   <span class="separation">|</span>
 			   <span id="user_exit"><a href="#" onclick="userExit();">退出</a></span>
 			   </s:else>
+			   <span>|</span>
+			   <span><a href="index">首页</a></span>
 			   <span class="separation">|</span>
 			   <span class="span"><a href="about">关于</a></span>
 			</div><!--end of top-->
