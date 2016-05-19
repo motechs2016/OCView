@@ -32,7 +32,7 @@ var userLogin = function(){
 					if(pathnamestr == "/OCView/series"||pathnamestr == "/OCView/media")
 						showCommentReply(iPageNum);
 					$("#fabiao").attr("href","javascript:void(0)");
-					$("#login").remove();
+					//$("#login").remove();//不应该remove掉
 				}
 				else{
 					$("#messageReturn").text("温馨提示:"+data);
@@ -85,8 +85,55 @@ var userRegist = function(){
 //退出后刷新页面
 userExit = function(){
 	$.get("user_exit");
-	window.location.reload();
+	//window.location.reload();
 	//退出后本不应该刷新，但是用户退出，表示用户不想看了，这里感觉并没有任何语义矛盾
+	
+	$("#top").html(
+		'<span id="loginPage"><a href="#">登录</a></span>\n'
+		+'<span>|</span>\n'
+		+'<span><a href="index">首页</a></span>\n'
+		+'<span class="separation">|</span>\n'
+		+'<span class="span"><a href="about">关于</a></span>\n'
+	);
+	//重新加入html后，还要给按钮注册事件
+	//ry.app.button();//这个是我针对media.jsp页面加的。并不通用所有页面
+	registLoginPageOnclick();
+	//wrapper在登陆后就被隐藏了，所有这里还需要展现出来，登陆关闭只是把hight设置为0
+	$("#wrapper").show();
+	document.getElementById('wrapper').style.height=0;
+};
+
+registLoginPageOnclick = function(){
+	var oLoginPage=document.getElementById('loginPage');
+	var oLogin=document.getElementById('login');
+	var oWrapper=document.getElementById('wrapper');
+	var oContent=document.getElementById('wrapperContent');
+	var oTurepsw=document.getElementById('turepsw');
+	var oEmail=document.getElementById('email');
+	var oEmailValue=document.getElementById('email_value');
+	var oPswTrue=document.getElementById('psw_true');
+	var oHeight=oContent.offsetHeight;
+	var oNick=document.getElementById('nickName');
+	var oNickValue=document.getElementById('nickName_value');
+	var oZhuce=document.getElementById('zhuce');
+	var oDenglu=document.getElementById('denglu');
+	var oSignInwrapper=document.getElementById('signInwrapper');
+	if(oLoginPage!=null){
+		oLoginPage.onclick=function(){
+			oLogin.style.display="block";
+			oTurepsw.style.display="none";
+			oPswTrue.style.display='none';
+			oNick.style.display='none';
+			oNickValue.style.display='none';
+			oEmail.style.display="none";
+			oEmailValue.style.display='none';
+			oZhuce.style.display='none';
+			oDenglu.style.display="block";
+			oSignInwrapper.style.display='block';
+			oWrapper.className="wrapper";
+			oWrapper.style.height=oHeight+'px';
+		}
+	}
 };
 
 

@@ -14,7 +14,7 @@
 		var iPageCount = 1;
 		var seriesId = ${series.seriesId};
 	</script>
-	<script type="text/javascript" src="js/myjs.js"></script>
+	<script type="text/javascript" src="js/core.js"></script>
 	<script type="text/javascript" src="js/comment.js"></script>
 	<script type="text/javascript" src="js/paging.js"></script>
 	<script type="text/javascript" src="js/login.js"></script>

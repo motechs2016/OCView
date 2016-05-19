@@ -6,7 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>意见反馈</title>
 	<link href="css/aboutUsCss.css" rel="stylesheet" type="text/css" />
-	<script src="js/myjs.js"></script>
+	<script src="js/core.js"></script>
 	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 	<script type="text/javascript" src="js/opinion.js"></script>
 </head>

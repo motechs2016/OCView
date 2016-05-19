@@ -14,7 +14,7 @@
 		var iPageCount = 1;
 		var seriesId = ${media.series.seriesId};
 	</script>
-	<script type="text/javascript" src="js/myjs.js"></script>
+	<script type="text/javascript" src="js/core.js"></script>
 	<script type="text/javascript" src="js/vote.js"></script>
 	<script type="text/javascript" src="js/comment.js"></script>
 	<script type="text/javascript" src="js/paging.js"></script>
@@ -165,7 +165,6 @@
 	</div>
 	<script>
 		ry.app.opinion();
-		var timer=null;
 		ry.app.toName();
 		ry.app.passsword();
 		ry.app.closeLogin();

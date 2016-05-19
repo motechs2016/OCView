@@ -6,7 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>重邮公开课</title>
 	<link href="css/mystyle.css" rel="stylesheet" type="text/css" />
-	<script src="js/myjs.js"></script>
+	<script src="js/core.js"></script>
 	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 	<script type="text/javascript" src="js/login.js"></script>
 	<script type="text/javascript" src="js/search.js"></script>
